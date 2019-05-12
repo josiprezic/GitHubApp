@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import SnapKit
 
 class RepositoriesCollectionViewController: UICollectionViewController {
 
+    //
+    // MARK: - Variables
+    //
+    
+    private var repositories = [GitHubRepository]()
+    
     //
     // MARK: - View methods
     //
@@ -17,11 +24,21 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        self.getData()
     }
     
     //
     // MARK: - Methods
     //
+    
+    private final func getData() {
+        GithubApi.getListOfGithubRepositories(forQuery: "tetris") { success, message, data in
+            guard success else { UIAlertController.showErrorAlert(error: message); return }
+            guard let repositoriesData = data as? [GitHubRepository] else { return }
+            self.repositories = repositoriesData
+            self.collectionView.reloadData()
+        }
+    }
     
     private final func configureUI() {
         configureNavigationBar()
@@ -33,8 +50,15 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     }
 
     private final func configureCollectionView() {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
+        flowLayout.minimumInteritemSpacing = 1.0
+        flowLayout.minimumLineSpacing = 1.0
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2 - 1, height: UIScreen.main.bounds.height / 3)
+        collectionView.collectionViewLayout = flowLayout
+        
         collectionView.backgroundColor = AppColors.RepositoriesCollectionVC.lightGray
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: AppStrings.RepositoriesCollectionVC.collectionViewReuseId)
+        self.collectionView!.register(RepositoryCollectionViewCell.self, forCellWithReuseIdentifier: AppStrings.RepositoriesCollectionVC.collectionViewReuseId)
     }
 }
 
@@ -49,14 +73,17 @@ extension RepositoriesCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return AppStrings.RepositoriesCollectionVC.strings.count
+        return repositories.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppStrings.RepositoriesCollectionVC.collectionViewReuseId, for: indexPath)
-        cell.backgroundColor = AppColors.RepositoriesCollectionVC.darkGray
-        cell.layer.cornerRadius = 5
-        cell.clipsToBounds = true
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppStrings.RepositoriesCollectionVC.collectionViewReuseId, for: indexPath) as? RepositoryCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        let item: GitHubRepository = repositories[indexPath.row]
+        cell.configureCell(repositoryName: item.name, ownerName: item.owner, sizeOfTheRepository: item.size, hasWiki: item.hasWiki)
         return cell
     }
 }
+
+

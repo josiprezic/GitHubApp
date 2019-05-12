@@ -22,13 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //
    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .vertical
-        flowLayout.minimumInteritemSpacing = 1.0
-        flowLayout.minimumLineSpacing = 1.0
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2 - 1, height: UIScreen.main.bounds.height / 3)
-        let repositoriesCVC = RepositoriesCollectionViewController(collectionViewLayout: flowLayout)
+
+        let repositoriesCVC = RepositoriesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: repositoriesCVC)
