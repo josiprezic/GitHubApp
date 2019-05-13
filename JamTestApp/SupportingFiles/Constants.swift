@@ -14,6 +14,10 @@ struct AppStrings {
         static let title = "Repositories"
         static let collectionViewReuseId = "cell"
         static let defaultQuery = "tetris"
+        static let searchDialogTitle = "Search"
+        static let searchDialogMessage = "Search GitHub repositories"
+        static let dismissActionTitle = "Dismiss"
+        static let searchPlaceholder = "Type your query here..."
     }
     struct ErrorMessage {
         static let internet = "Network error: Unable to connect"

@@ -18,6 +18,7 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     private final var repositories = [GitHubRepository]()
     private final let activityIndicator = UIActivityIndicatorView()
     private final let refreshControl = UIRefreshControl()
+    private final var lastQuery = AppStrings.RepositoriesCollectionVC.defaultQuery
     
     //
     // MARK: - View methods
@@ -26,15 +27,15 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        self.getData()
+        self.getData(query: lastQuery)
     }
     
     //
     // MARK: - Methods
     //
     
-    @objc private final func getData() {
-        GithubApi.getListOfGithubRepositories(forQuery: AppStrings.RepositoriesCollectionVC.defaultQuery) { success, message, data in
+    private final func getData(query: String) {
+        GithubApi.getListOfGithubRepositories(forQuery: query) { success, message, data in
             self.activityIndicator.stopAnimating()
             self.refreshControl.endRefreshing()
             guard success else { UIAlertController.showErrorAlert(error: message); return }
@@ -53,6 +54,7 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     
     private final func configureNavigationBar() {
         title = AppStrings.RepositoriesCollectionVC.title
+        configureSearchNavBarIcon()
     }
 
     private final func configureCollectionView() {
@@ -78,8 +80,51 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     
     private final func configureRefreshControl() {
         collectionView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(getData), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         refreshControl.tintColor = AppColors.RepositoriesCollectionVC.black
+    }
+    
+    @objc private final func refresh(_ sender: AnyObject) {
+        getData(query: lastQuery)
+    }
+    
+    private final func configureSearchNavBarIcon() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchPressed))
+        navigationItem.rightBarButtonItem?.tintColor = AppColors.RepositoriesCollectionVC.black
+    }
+    
+    @objc private final func searchPressed() {
+        showSearchDialog()
+    }
+    
+    public final func showSearchDialog() {
+        let alert = UIAlertController(title: AppStrings.RepositoriesCollectionVC.searchDialogTitle, message: AppStrings.RepositoriesCollectionVC.searchDialogMessage, preferredStyle: .alert)
+        
+        //setup alert actions
+        let searchAction = UIAlertAction(title: AppStrings.RepositoriesCollectionVC.searchDialogTitle, style: .default, handler: { [weak alert] (_) in
+            guard let searchQuery = alert?.textFields?[0].text else { return }
+            self.lastQuery = searchQuery
+            self.getData(query: searchQuery)
+        })
+        searchAction.isEnabled = false
+        let dismissAction = UIAlertAction(title: AppStrings.RepositoriesCollectionVC.title, style: .cancel, handler: nil)
+        
+        alert.addAction(dismissAction)
+        alert.addAction(searchAction)
+        
+        //setup alert textField
+        alert.addTextField { textField in
+            textField.placeholder = AppStrings.RepositoriesCollectionVC.searchPlaceholder
+            textField.layer.cornerRadius = 5
+            textField.clipsToBounds = true
+            
+            NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: OperationQueue.main, using: { _ in
+                let textCount = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines).count ?? 0
+                let textIsNotEmpty = textCount > 0
+                searchAction.isEnabled = textIsNotEmpty && textField.text?.isAlphanumeric ?? false
+            })
+        }
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
