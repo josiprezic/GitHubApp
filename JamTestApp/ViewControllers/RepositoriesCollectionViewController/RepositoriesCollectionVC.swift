@@ -16,7 +16,8 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     //
     
     private final var repositories = [GitHubRepository]()
-    private final var activityIndicator = UIActivityIndicatorView()
+    private final let activityIndicator = UIActivityIndicatorView()
+    private final let refreshControl = UIRefreshControl()
     
     //
     // MARK: - View methods
@@ -32,9 +33,10 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     // MARK: - Methods
     //
     
-    private final func getData() {
+    @objc private final func getData() {
         GithubApi.getListOfGithubRepositories(forQuery: AppStrings.RepositoriesCollectionVC.defaultQuery) { success, message, data in
             self.activityIndicator.stopAnimating()
+            self.refreshControl.endRefreshing()
             guard success else { UIAlertController.showErrorAlert(error: message); return }
             guard let repositoriesData = data as? [GitHubRepository] else { return }
             self.repositories = repositoriesData
@@ -46,6 +48,7 @@ class RepositoriesCollectionViewController: UICollectionViewController {
         configureNavigationBar()
         configureCollectionView()
         configureActivityIndicator()
+        configureRefreshControl()
     }
     
     private final func configureNavigationBar() {
@@ -70,8 +73,13 @@ class RepositoriesCollectionViewController: UICollectionViewController {
             make.size.equalToSuperview()
             make.center.equalToSuperview()
         }
-        activityIndicator.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
         activityIndicator.startAnimating()
+    }
+    
+    private final func configureRefreshControl() {
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(getData), for: .valueChanged)
+        refreshControl.tintColor = AppColors.RepositoriesCollectionVC.black
     }
 }
 
