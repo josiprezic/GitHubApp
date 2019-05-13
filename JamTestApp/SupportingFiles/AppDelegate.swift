@@ -25,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let repositoriesCVC = RepositoriesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         
+        UINavigationBar.appearance().barTintColor = .black
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: repositoriesCVC)
         window?.makeKeyAndVisible()

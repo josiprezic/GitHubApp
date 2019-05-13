@@ -66,6 +66,7 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     
     private final func configureNavigationBar() {
         title = AppStrings.RepositoriesCollectionVC.title
+        navigationController?.navigationBar.barStyle = .black
         configureSearchNavBarIcon()
     }
 
@@ -110,7 +111,7 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     
     private final func configureSearchNavBarIcon() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchPressed))
-        navigationItem.rightBarButtonItem?.tintColor = AppColors.RepositoriesCollectionVC.black
+        navigationItem.rightBarButtonItem?.tintColor = AppColors.RepositoriesCollectionVC.statusBarTextColor
     }
     
     @objc private final func searchPressed() {
