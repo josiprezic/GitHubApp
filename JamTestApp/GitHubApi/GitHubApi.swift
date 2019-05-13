@@ -20,7 +20,6 @@ struct GithubApi {
             
             switch result {
             case .failure:
-                debugPrint("\(#function): json error")
                 completed(false, AppStrings.ErrorMessage.internet, nil)
                 return
             
@@ -28,23 +27,20 @@ struct GithubApi {
                 guard let dict = result.value as? [String: AnyObject],
                     let items = dict["items"] as? [Dictionary<String, AnyObject>] else {
                         debugPrint("\(#function): json error")
-                        completed(false, "Error: json error", nil)
+                        completed(false, AppStrings.ErrorMessage.json, nil)
                         return
                 }
                 
                 var repositories = [GitHubRepository]()
                 for item in items {
-                    print("------------------------------")
                     guard let name = item["name"] as? String,
                         let ownerData = item["owner"] as? [String: Any],
                         let ownerName = ownerData["login"] as? String,
                         let size = item["size"] as? Int,
                         let hasWiki = item["has_wiki"] as? Bool else {
-                        debugPrint("\(#function): json error")
-                        completed(false, "Error: json error", nil)
+                        completed(false, AppStrings.ErrorMessage.json, nil)
                         continue
                     }
-                    print("\(ownerName)")
                     let newElement = GitHubRepository(name: name, owner: ownerName, size: size, hasWiki: hasWiki)
                     repositories.append(newElement)
                 }

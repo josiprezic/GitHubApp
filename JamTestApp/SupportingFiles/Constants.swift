@@ -13,10 +13,11 @@ struct AppStrings {
     struct RepositoriesCollectionVC {
         static let title = "Repositories"
         static let collectionViewReuseId = "cell"
-        static let strings = ["Test", "Test", "Test", "Test", "Test", "Test", "Test", "Test", "Test"]
+        static let defaultQuery = "tetris"
     }
     struct ErrorMessage {
         static let internet = "Network error: Unable to connect"
+        static let json = "Network error: JSON error"
     }
 }
 

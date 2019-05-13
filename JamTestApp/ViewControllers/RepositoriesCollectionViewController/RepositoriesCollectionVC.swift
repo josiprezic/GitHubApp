@@ -15,7 +15,8 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     // MARK: - Variables
     //
     
-    private var repositories = [GitHubRepository]()
+    private final var repositories = [GitHubRepository]()
+    private final var activityIndicator = UIActivityIndicatorView()
     
     //
     // MARK: - View methods
@@ -32,7 +33,8 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     //
     
     private final func getData() {
-        GithubApi.getListOfGithubRepositories(forQuery: "tetris") { success, message, data in
+        GithubApi.getListOfGithubRepositories(forQuery: AppStrings.RepositoriesCollectionVC.defaultQuery) { success, message, data in
+            self.activityIndicator.stopAnimating()
             guard success else { UIAlertController.showErrorAlert(error: message); return }
             guard let repositoriesData = data as? [GitHubRepository] else { return }
             self.repositories = repositoriesData
@@ -43,6 +45,7 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     private final func configureUI() {
         configureNavigationBar()
         configureCollectionView()
+        configureActivityIndicator()
     }
     
     private final func configureNavigationBar() {
@@ -52,13 +55,23 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     private final func configureCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
-        flowLayout.minimumInteritemSpacing = 1.0
-        flowLayout.minimumLineSpacing = 1.0
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2 - 1, height: UIScreen.main.bounds.height / 3)
+        flowLayout.minimumInteritemSpacing = 2.0
+        flowLayout.minimumLineSpacing = 3.0
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2 - 2, height: UIScreen.main.bounds.height / 3)
         collectionView.collectionViewLayout = flowLayout
         
         collectionView.backgroundColor = AppColors.RepositoriesCollectionVC.lightGray
         self.collectionView!.register(RepositoryCollectionViewCell.self, forCellWithReuseIdentifier: AppStrings.RepositoriesCollectionVC.collectionViewReuseId)
+    }
+    
+    private final func configureActivityIndicator() {
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { make in
+            make.size.equalToSuperview()
+            make.center.equalToSuperview()
+        }
+        activityIndicator.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
+        activityIndicator.startAnimating()
     }
 }
 
