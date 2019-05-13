@@ -16,9 +16,21 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     //
     
     private final var repositories = [GitHubRepository]()
+    private final var lastQuery = AppStrings.RepositoriesCollectionVC.defaultQuery
+    
+    //
+    // MARK: - Views
+    //
+    
     private final let activityIndicator = UIActivityIndicatorView()
     private final let refreshControl = UIRefreshControl()
-    private final var lastQuery = AppStrings.RepositoriesCollectionVC.defaultQuery
+    private lazy var lblEmptyDataSet: UILabel = {
+        let lbl = UILabel()
+        lbl.text = AppStrings.RepositoriesCollectionVC.noData
+        lbl.font = UIFont.boldSystemFont(ofSize: 25)
+        lbl.textColor = AppColors.RepositoriesCollectionVC.darkGray
+        return lbl
+    }()
     
     //
     // MARK: - View methods
@@ -41,7 +53,7 @@ class RepositoriesCollectionViewController: UICollectionViewController {
             guard success else { UIAlertController.showErrorAlert(error: message); return }
             guard let repositoriesData = data as? [GitHubRepository] else { return }
             self.repositories = repositoriesData
-            self.collectionView.reloadData()
+            self.refreshCollectionView()
         }
     }
     
@@ -67,6 +79,14 @@ class RepositoriesCollectionViewController: UICollectionViewController {
         
         collectionView.backgroundColor = AppColors.RepositoriesCollectionVC.lightGray
         self.collectionView!.register(RepositoryCollectionViewCell.self, forCellWithReuseIdentifier: AppStrings.RepositoriesCollectionVC.collectionViewReuseId)
+        
+        configureNoDataView()
+    }
+    
+    private final func configureNoDataView() {
+        view.addSubview(lblEmptyDataSet)
+        lblEmptyDataSet.snp.makeConstraints { make in make.center.equalToSuperview() }
+        lblEmptyDataSet.isHidden = true
     }
     
     private final func configureActivityIndicator() {
@@ -107,7 +127,7 @@ class RepositoriesCollectionViewController: UICollectionViewController {
             self.getData(query: searchQuery)
         })
         searchAction.isEnabled = false
-        let dismissAction = UIAlertAction(title: AppStrings.RepositoriesCollectionVC.title, style: .cancel, handler: nil)
+        let dismissAction = UIAlertAction(title: AppStrings.RepositoriesCollectionVC.dismissActionTitle, style: .cancel, handler: nil)
         
         alert.addAction(dismissAction)
         alert.addAction(searchAction)
@@ -125,6 +145,11 @@ class RepositoriesCollectionViewController: UICollectionViewController {
             })
         }
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    private final func refreshCollectionView() {
+        collectionView.reloadData()
+        lblEmptyDataSet.isHidden = repositories.count != 0
     }
 }
 

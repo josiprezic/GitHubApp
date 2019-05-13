@@ -18,6 +18,7 @@ struct AppStrings {
         static let searchDialogMessage = "Search GitHub repositories"
         static let dismissActionTitle = "Dismiss"
         static let searchPlaceholder = "Type your query here..."
+        static let noData = "No Data :("
     }
     struct ErrorMessage {
         static let internet = "Network error: Unable to connect"
