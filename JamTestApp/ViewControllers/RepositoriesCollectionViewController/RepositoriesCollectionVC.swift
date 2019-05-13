@@ -150,7 +150,9 @@ class RepositoriesCollectionViewController: UICollectionViewController {
     }
     
     private final func refreshCollectionView() {
-        collectionView.reloadData()
+        let range = Range(uncheckedBounds: (0, collectionView.numberOfSections))
+        let indexSet = IndexSet(integersIn: range)
+        collectionView.reloadSections(indexSet)
         lblEmptyDataSet.isHidden = repositories.count != 0
     }
 }
