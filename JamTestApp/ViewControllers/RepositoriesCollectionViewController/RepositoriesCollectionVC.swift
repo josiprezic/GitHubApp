@@ -74,7 +74,7 @@ class RepositoriesCollectionViewController: UICollectionViewController {
         flowLayout.scrollDirection = .vertical
         flowLayout.minimumInteritemSpacing = 2.0
         flowLayout.minimumLineSpacing = 3.0
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2 - 2, height: UIScreen.main.bounds.height / 3)
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2 - 2, height: 220)
         collectionView.collectionViewLayout = flowLayout
         
         collectionView.backgroundColor = AppColors.RepositoriesCollectionVC.lightGray
@@ -125,6 +125,7 @@ class RepositoriesCollectionViewController: UICollectionViewController {
             guard let searchQuery = alert?.textFields?[0].text else { return }
             self.lastQuery = searchQuery
             self.getData(query: searchQuery)
+            self.activityIndicator.startAnimating()
         })
         searchAction.isEnabled = false
         let dismissAction = UIAlertAction(title: AppStrings.RepositoriesCollectionVC.dismissActionTitle, style: .cancel, handler: nil)

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 extension UIAlertController {
-    
     public static func showAlert(message: String, title: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)

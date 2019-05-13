@@ -20,6 +20,7 @@ struct AppStrings {
         static let searchPlaceholder = "Type your query here..."
         static let noData = "No Data :("
     }
+    
     struct ErrorMessage {
         static let internet = "Network error: Unable to connect"
         static let json = "Network error: JSON error"
