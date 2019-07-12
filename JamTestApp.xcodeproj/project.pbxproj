@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		AC2871933C53E9903EDE95AE /* Pods_JamTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D262B5FD6D836D49A94CB5 /* Pods_JamTestApp.framework */; };
+		D7C507D822D8747C001427C1 /* JamTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C507D722D8747C001427C1 /* JamTestAppTests.swift */; };
+		D7C507E622D88A19001427C1 /* JamTestAppSlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C507E522D88A19001427C1 /* JamTestAppSlowTests.swift */; };
 		E29A54EA22889A3800160A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A54E922889A3800160A7A /* AppDelegate.swift */; };
 		E29A54F122889A3900160A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E29A54F022889A3900160A7A /* Assets.xcassets */; };
 		E29A54F422889A3900160A7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29A54F222889A3900160A7A /* LaunchScreen.storyboard */; };
@@ -20,10 +22,41 @@
 		E29A55122288D9CB00160A7A /* TitleAndDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A55112288D9CB00160A7A /* TitleAndDescriptionView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D7C507DA22D8747C001427C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E29A54DE22889A3800160A7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E29A54E522889A3800160A7A;
+			remoteInfo = JamTestApp;
+		};
+		D7C507E822D88A19001427C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E29A54DE22889A3800160A7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E29A54E522889A3800160A7A;
+			remoteInfo = JamTestApp;
+		};
+		D7C507F622D8904D001427C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E29A54DE22889A3800160A7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E29A54E522889A3800160A7A;
+			remoteInfo = JamTestApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		02D262B5FD6D836D49A94CB5 /* Pods_JamTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JamTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C7282E7214971E4A04BA9B /* Pods-JamTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JamTestApp.debug.xcconfig"; path = "Target Support Files/Pods-JamTestApp/Pods-JamTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A6510392BE3A869B4EA07C76 /* Pods-JamTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JamTestApp.release.xcconfig"; path = "Target Support Files/Pods-JamTestApp/Pods-JamTestApp.release.xcconfig"; sourceTree = "<group>"; };
+		D7C507D522D8747C001427C1 /* JamTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JamTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7C507D722D8747C001427C1 /* JamTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamTestAppTests.swift; sourceTree = "<group>"; };
+		D7C507D922D8747C001427C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7C507E322D88A19001427C1 /* JamTestAppSlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JamTestAppSlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7C507E522D88A19001427C1 /* JamTestAppSlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamTestAppSlowTests.swift; sourceTree = "<group>"; };
+		D7C507E722D88A19001427C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7C507F122D8904D001427C1 /* JamTestAppFakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JamTestAppFakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29A54E622889A3800160A7A /* JamTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JamTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29A54E922889A3800160A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E29A54F022889A3900160A7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +72,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D7C507D222D8747C001427C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C507E022D88A19001427C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C507EE22D8904D001427C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E29A54E322889A3800160A7A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,10 +121,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D7C507D622D8747C001427C1 /* JamTestAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7C507D722D8747C001427C1 /* JamTestAppTests.swift */,
+				D7C507D922D8747C001427C1 /* Info.plist */,
+			);
+			path = JamTestAppTests;
+			sourceTree = "<group>";
+		};
+		D7C507E422D88A19001427C1 /* JamTestAppSlowTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7C507E522D88A19001427C1 /* JamTestAppSlowTests.swift */,
+				D7C507E722D88A19001427C1 /* Info.plist */,
+			);
+			path = JamTestAppSlowTests;
+			sourceTree = "<group>";
+		};
 		E29A54DD22889A3800160A7A = {
 			isa = PBXGroup;
 			children = (
 				E29A54E822889A3800160A7A /* JamTestApp */,
+				D7C507D622D8747C001427C1 /* JamTestAppTests */,
+				D7C507E422D88A19001427C1 /* JamTestAppSlowTests */,
 				E29A54E722889A3800160A7A /* Products */,
 				064E2BFCE71333CD639720DB /* Pods */,
 				050F6B7D5D1AD18607D159E8 /* Frameworks */,
@@ -81,6 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				E29A54E622889A3800160A7A /* JamTestApp.app */,
+				D7C507D522D8747C001427C1 /* JamTestAppTests.xctest */,
+				D7C507E322D88A19001427C1 /* JamTestAppSlowTests.xctest */,
+				D7C507F122D8904D001427C1 /* JamTestAppFakeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,6 +239,60 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D7C507D422D8747C001427C1 /* JamTestAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7C507DC22D8747C001427C1 /* Build configuration list for PBXNativeTarget "JamTestAppTests" */;
+			buildPhases = (
+				D7C507D122D8747C001427C1 /* Sources */,
+				D7C507D222D8747C001427C1 /* Frameworks */,
+				D7C507D322D8747C001427C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7C507DB22D8747C001427C1 /* PBXTargetDependency */,
+			);
+			name = JamTestAppTests;
+			productName = JamTestAppTests;
+			productReference = D7C507D522D8747C001427C1 /* JamTestAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D7C507E222D88A19001427C1 /* JamTestAppSlowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7C507EA22D88A19001427C1 /* Build configuration list for PBXNativeTarget "JamTestAppSlowTests" */;
+			buildPhases = (
+				D7C507DF22D88A19001427C1 /* Sources */,
+				D7C507E022D88A19001427C1 /* Frameworks */,
+				D7C507E122D88A19001427C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7C507E922D88A19001427C1 /* PBXTargetDependency */,
+			);
+			name = JamTestAppSlowTests;
+			productName = JamTestAppSlowTests;
+			productReference = D7C507E322D88A19001427C1 /* JamTestAppSlowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D7C507F022D8904D001427C1 /* JamTestAppFakeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7C507F822D8904D001427C1 /* Build configuration list for PBXNativeTarget "JamTestAppFakeTests" */;
+			buildPhases = (
+				D7C507ED22D8904D001427C1 /* Sources */,
+				D7C507EE22D8904D001427C1 /* Frameworks */,
+				D7C507EF22D8904D001427C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7C507F722D8904D001427C1 /* PBXTargetDependency */,
+			);
+			name = JamTestAppFakeTests;
+			productName = JamTestAppFakeTests;
+			productReference = D7C507F122D8904D001427C1 /* JamTestAppFakeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E29A54E522889A3800160A7A /* JamTestApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E29A54F822889A3900160A7A /* Build configuration list for PBXNativeTarget "JamTestApp" */;
@@ -191,6 +322,18 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Josip Rezic";
 				TargetAttributes = {
+					D7C507D422D8747C001427C1 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = E29A54E522889A3800160A7A;
+					};
+					D7C507E222D88A19001427C1 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = E29A54E522889A3800160A7A;
+					};
+					D7C507F022D8904D001427C1 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = E29A54E522889A3800160A7A;
+					};
 					E29A54E522889A3800160A7A = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -210,11 +353,35 @@
 			projectRoot = "";
 			targets = (
 				E29A54E522889A3800160A7A /* JamTestApp */,
+				D7C507D422D8747C001427C1 /* JamTestAppTests */,
+				D7C507E222D88A19001427C1 /* JamTestAppSlowTests */,
+				D7C507F022D8904D001427C1 /* JamTestAppFakeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D7C507D322D8747C001427C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C507E122D88A19001427C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C507EF22D8904D001427C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E29A54E422889A3800160A7A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,18 +422,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JamTestApp/Pods-JamTestApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-JamTestApp/Pods-JamTestApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-JamTestApp/Pods-JamTestApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -276,6 +436,29 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D7C507D122D8747C001427C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7C507D822D8747C001427C1 /* JamTestAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C507DF22D88A19001427C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7C507E622D88A19001427C1 /* JamTestAppSlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C507ED22D8904D001427C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E29A54E222889A3800160A7A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -293,6 +476,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D7C507DB22D8747C001427C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E29A54E522889A3800160A7A /* JamTestApp */;
+			targetProxy = D7C507DA22D8747C001427C1 /* PBXContainerItemProxy */;
+		};
+		D7C507E922D88A19001427C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E29A54E522889A3800160A7A /* JamTestApp */;
+			targetProxy = D7C507E822D88A19001427C1 /* PBXContainerItemProxy */;
+		};
+		D7C507F722D8904D001427C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E29A54E522889A3800160A7A /* JamTestApp */;
+			targetProxy = D7C507F622D8904D001427C1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		E29A54F222889A3900160A7A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -305,6 +506,126 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D7C507DD22D8747C001427C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W5SLRW4B3C;
+				INFOPLIST_FILE = JamTestAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cc.productDemo.JamTestAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JamTestApp.app/JamTestApp";
+			};
+			name = Debug;
+		};
+		D7C507DE22D8747C001427C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W5SLRW4B3C;
+				INFOPLIST_FILE = JamTestAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cc.productDemo.JamTestAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JamTestApp.app/JamTestApp";
+			};
+			name = Release;
+		};
+		D7C507EB22D88A19001427C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W5SLRW4B3C;
+				INFOPLIST_FILE = JamTestAppSlowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cc.productDemo.JamTestAppSlowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JamTestApp.app/JamTestApp";
+			};
+			name = Debug;
+		};
+		D7C507EC22D88A19001427C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W5SLRW4B3C;
+				INFOPLIST_FILE = JamTestAppSlowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cc.productDemo.JamTestAppSlowTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JamTestApp.app/JamTestApp";
+			};
+			name = Release;
+		};
+		D7C507F922D8904D001427C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W5SLRW4B3C;
+				INFOPLIST_FILE = JamTestAppFakeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cc.productDemo.JamTestAppFakeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JamTestApp.app/JamTestApp";
+			};
+			name = Debug;
+		};
+		D7C507FA22D8904D001427C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W5SLRW4B3C;
+				INFOPLIST_FILE = JamTestAppFakeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cc.productDemo.JamTestAppFakeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JamTestApp.app/JamTestApp";
+			};
+			name = Release;
+		};
 		E29A54F622889A3900160A7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -427,13 +748,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 49M8DX7784;
+				DEVELOPMENT_TEAM = 9V923T224A;
 				INFOPLIST_FILE = JamTestApp/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.josiprezic.JamTestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.josiprezicc.JamTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,13 +767,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 49M8DX7784;
+				DEVELOPMENT_TEAM = 9V923T224A;
 				INFOPLIST_FILE = JamTestApp/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.josiprezic.JamTestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.josiprezicc.JamTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -462,6 +783,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D7C507DC22D8747C001427C1 /* Build configuration list for PBXNativeTarget "JamTestAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7C507DD22D8747C001427C1 /* Debug */,
+				D7C507DE22D8747C001427C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7C507EA22D88A19001427C1 /* Build configuration list for PBXNativeTarget "JamTestAppSlowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7C507EB22D88A19001427C1 /* Debug */,
+				D7C507EC22D88A19001427C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7C507F822D8904D001427C1 /* Build configuration list for PBXNativeTarget "JamTestAppFakeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7C507F922D8904D001427C1 /* Debug */,
+				D7C507FA22D8904D001427C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E29A54E122889A3800160A7A /* Build configuration list for PBXProject "JamTestApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

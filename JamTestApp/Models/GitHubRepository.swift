@@ -10,15 +10,19 @@ import Foundation
 
 class GitHubRepository {
     
-    let name: String
-    let owner: String
-    let size: Int
-    let hasWiki: Bool
+    var name: String
+    var owner: String
+    var size: Int
+    var hasWiki: Bool
     
     init(name: String, owner: String, size: Int, hasWiki: Bool) {
         self.name = name
         self.owner = owner
         self.size = size
         self.hasWiki = hasWiki
+    }
+    
+    func setName(newName: String) {
+        self.name = newName
     }
 }
