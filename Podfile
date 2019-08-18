@@ -1,9 +1,9 @@
 platform :ios, '12.2'
 
-target 'JamTestApp' do
+target 'GitHubApp' do
   use_frameworks!
 
-  # Pods for JamTestApp
+  # Pods for GitHubApp
   pod 'Alamofire'
   pod 'SnapKit'
 

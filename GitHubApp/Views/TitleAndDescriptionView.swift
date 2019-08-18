@@ -1,6 +1,6 @@
 //
 //  TitleAndDescriptionView.swift
-//  JamTestApp
+//  GitHubApp
 //
 //  Created by Korisnik on 13/05/2019.
 //  Copyright © 2019 Josip Rezic. All rights reserved.
