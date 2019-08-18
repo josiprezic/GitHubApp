@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  JamTestApp
+//  GitHubApp
 //
 //  Created by Josip Rezic on 12/05/2019.
 //  Copyright © 2019 Josip Rezic. All rights reserved.

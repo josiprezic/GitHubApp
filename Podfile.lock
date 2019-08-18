@@ -1,20 +1,41 @@
 PODS:
   - Alamofire (4.8.2)
+  - Mockingjay (3.0.0-alpha.1):
+    - Mockingjay/Core (= 3.0.0-alpha.1)
+    - Mockingjay/XCTest (= 3.0.0-alpha.1)
+  - Mockingjay/Core (3.0.0-alpha.1):
+    - URITemplate (~> 3.0)
+  - Mockingjay/XCTest (3.0.0-alpha.1):
+    - Mockingjay/Core
+  - Nimble (8.0.2)
+  - Quick (2.1.0)
   - SnapKit (4.2.0)
+  - URITemplate (3.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - Mockingjay (~> 3.0.0-alpha.1)
+  - Nimble (~> 8.0.1)
+  - Quick (~> 2.1.0)
   - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Mockingjay
+    - Nimble
+    - Quick
     - SnapKit
+    - URITemplate
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Mockingjay: 0f7c5aa49c7f1b95621cee3c79b557141f5a225c
+  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  URITemplate: 58e0d47f967006c5d59888af5356c4a8ed3b197d
 
-PODFILE CHECKSUM: 196cab058c3c467f3b5f7aebee44fd54086f7599
+PODFILE CHECKSUM: 18c5e5f00b360747ea634a7c42650ffb0c36123b
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.5
