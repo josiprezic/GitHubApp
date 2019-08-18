@@ -8,9 +8,10 @@
 
 import Quick
 import Nimble
+@testable import GitHubApp
 
 class GitHubAppTests: QuickSpec {
-
+    
     override func spec() {
         
     }
